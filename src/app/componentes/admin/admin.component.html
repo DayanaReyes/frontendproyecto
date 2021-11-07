@@ -1,0 +1,70 @@
+
+<div class="float-end">
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    
+    <button type="button" class="btn btn-warning" (click)="cargar()">Cargar</button>
+    <button type="button" class="btn btn-success" (click)="exportarPDF()">Exportar pdf</button>
+    <button type="button" class="btn btn-danger"(click)="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+</div>
+
+
+    <div id="content" #content class="div card">
+        <div class="card-body">
+            <table   class="table table-hover">
+                <thead>
+                    <th>Nombre</th>
+                    <th>Género</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Opciones</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let u of usuario" > 
+                        <td>{{u.name}}</td>
+                        <td>{{u.gender}}</td>
+                        <td>{{u.username}}</td>
+                        <td>{{u.email}}</td>
+                        <td>
+                            <a  (click)="seleccionar(u)" class="link-success"><i class="fas fa-pen"> Editar</i></a>
+                            <br>
+                            <a (click)="eliminar(u.username)" class="link-success"><i class="fas fa-user-minus"> Eliminar</i></a>
+                        </td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <b><p class="text-center">EDITAR</p></b>
+    <div class="card" style="width: 40rem;" >
+        <div class="card-body">
+            <form >
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Nombre completo</label>
+                  <input type="text" class="form-control" [(ngModel)]=selectedUsuario.name name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Género</label>
+                    <input type="text" class="form-control" [(ngModel)]=selectedUsuario.gender name="gender">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <input type="text"  class="form-control"  [(ngModel)]=selectedUsuario.username name="username">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control"  [(ngModel)]=selectedUsuario.email name="email">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control"  [(ngModel)]=selectedUsuario.password name="password">
+                </div>
+                <button type="submit" class="btn" style="background-color: #9d5cd1;" (click)="editar(username,selectedUsuario )" >Editar</button>
+                
+              </form>
+        </div>
+      </div>
+    
+
+    

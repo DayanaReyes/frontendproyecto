@@ -1,0 +1,38 @@
+<div class="float-end">
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    
+    <button type="button" class="btn btn-success" (click)="regresar()">Regresar</button>
+    <button type="button" class="btn btn-danger"(click)="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+</div>
+<b><p class="text-center">EDITAR</p></b>
+    <div class="card" style="width: 40rem;" >
+        <div class="card-body">
+            <form >
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Nombre completo</label>
+                  <input type="text" class="form-control" [(ngModel)]='user.name' name="name" >
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Género</label>
+                    <input type="text" class="form-control" [(ngModel)]='user.gender' name="gender">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <input type="text"  class="form-control" [(ngModel)]='user.username' name="username" >
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" [(ngModel)]='user.email' name="email" >
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control"  [(ngModel)]='user.password' name="password">
+                </div>
+                <button type="submit" class="btn" style="background-color: #9d5cd1;" (click)="obtener()">Obtener Datos</button>
+                <div class="boton">
+                    <button type="submit" class="btn"  style="background-color: #9d5cd1;" (click)="editar(username, user)">Editar</button>
+                </div>
+              </form>
+        </div>
+      </div>
